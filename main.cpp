@@ -5,10 +5,10 @@
 
 int main(int argc, char *argv[])
 {
-    QString version = "V0.1";   //版本号
+    QString appName = "windeployqtGUI", version = "V0.1";   //应用名和版本号
     QApplication a(argc, argv);
     MainWindow w;
-    w.setWindowTitle("windeployqtGUI - " + version);
+    w.setWindowTitle(appName + " - " + version);
     w.show();
     return a.exec();
 }
