@@ -7,11 +7,11 @@
 #include <QFileDialog>
 #include <QProcess>
 #include <QMessageBox>
-#include <QtDebug>
+//#include <QtDebug>
 //#include <QDragEnterEvent>
 //#include <QDropEvent>
 //#include <QMimeData>
-#include <QTextEdit>
+//#include <QTextEdit>
 
 #pragma execution_character_set("utf-8")
 
@@ -27,12 +27,6 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-protected:
-
-private:
-    bool readFile(const QString &fileName);
-    QTextEdit *textEdit;
-
 private slots:
     void on_toolPathSelect_clicked();
 
@@ -44,5 +38,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+
+
 };
 #endif // MAINWINDOW_H

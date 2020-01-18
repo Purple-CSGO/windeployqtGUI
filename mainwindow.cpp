@@ -10,9 +10,6 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    ui->deployPath->setAcceptDrops(true);
-    ui->deployPath->setDragEnabled(true);
-    //未引入拖拽之前为了快速debug设计
     toolPath = ui->toolPath->text();
     deployPath = ui->deployPath->text();
 
@@ -65,30 +62,19 @@ void MainWindow::on_Start_clicked()
         QMessageBox::warning(this, "成功", "");
 }
 
-//读取文本内容
-bool MainWindow::readFile(const QString &fileName)
-{
-    bool r = false;
-    QFile file(fileName);
-    QString content;
-    if(file.open(QIODevice::ReadOnly)) {    //一定注意设置为只读
-        content = file.readAll();
-        r = true;
-    }
-    textEdit->setText(content);
-    return r;
-}
-
 //利用QString的remove find file:///        支持拖拽文件和粘贴拖拽路径文本
-//注意设置文本为空
+//注意设置文本为空 TODO: placeholder只能单行显示 复杂项目`拖拽区域`的显示可能有问题
 void MainWindow::on_dragArea_textChanged()
 {
     QString tPath = ui->dragArea->toPlainText();
     if( tPath.endsWith("windeployqt.exe",Qt::CaseSensitive) ){
         //去除拖拽产生的前缀
-        int i = tPath.lastIndexOf("file:///");
-        if(  i != -1 )
-            tPath.remove(0, i + QString("file:///").length() );
+        tPath.replace("file:///","");
+        /*
+                int i = tPath.lastIndexOf("file:///");
+                if(  i != -1 )
+                    tPath.remove(0, i + QString("file:///").length() );
+        */
 
         //该路径文件存在时设置路径
         if(QFile::exists(tPath))
@@ -96,9 +82,12 @@ void MainWindow::on_dragArea_textChanged()
     }
     else if( tPath.endsWith(".exe",Qt::CaseSensitive) ){
         //去除拖拽产生的前缀
-        int i = tPath.lastIndexOf("file:///");
-        if(  i != -1 )
-            tPath.remove(0, i + QString("file:///").length() );
+        tPath.replace("file:///","");
+        /*
+                int i = tPath.lastIndexOf("file:///");
+                if(  i != -1 )
+                    tPath.remove(0, i + QString("file:///").length() );
+        */
 
         //该路径文件存在时设置路径
         if(QFile::exists(tPath))
