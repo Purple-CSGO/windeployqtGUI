@@ -16,7 +16,7 @@
 
 ## 应用界面
 
-![UI.png](https://upload-images.jianshu.io/upload_images/18819811-06a9ecd91e49602b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![UI.png](https://github.com/Purple-CSGO/windeployqtGUI/blob/master/UI.png)
 
 ## 待解决的问题
 
