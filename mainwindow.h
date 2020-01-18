@@ -8,6 +8,10 @@
 #include <QProcess>
 #include <QMessageBox>
 #include <QtDebug>
+//#include <QDragEnterEvent>
+//#include <QDropEvent>
+//#include <QMimeData>
+#include <QTextEdit>
 
 #pragma execution_character_set("utf-8")
 
@@ -23,12 +27,20 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+protected:
+
+private:
+    bool readFile(const QString &fileName);
+    QTextEdit *textEdit;
+
 private slots:
     void on_toolPathSelect_clicked();
 
     void on_deployPathSelect_clicked();
 
     void on_Start_clicked();
+
+    void on_dragArea_textChanged();
 
 private:
     Ui::MainWindow *ui;

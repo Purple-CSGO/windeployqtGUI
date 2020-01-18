@@ -2,7 +2,6 @@
 
 #include <QApplication>
 
-
 int main(int argc, char *argv[])
 {
     QString appName = "windeployqtGUI", version = "V0.1";   //应用名和版本号
