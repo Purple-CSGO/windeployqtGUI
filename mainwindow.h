@@ -5,13 +5,11 @@
 #include <QString>
 #include <QFile>
 #include <QFileDialog>
+//#include <QFileInfo>
 #include <QProcess>
 #include <QMessageBox>
-//#include <QtDebug>
-//#include <QDragEnterEvent>
-//#include <QDropEvent>
-//#include <QMimeData>
-//#include <QTextEdit>
+#include <QSettings>
+#include <QCloseEvent>
 
 #pragma execution_character_set("utf-8")
 
@@ -39,6 +37,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
 
-
+    void readSetting();
+    void writeSetting();
+    void closeEvent(QCloseEvent *e);
 };
 #endif // MAINWINDOW_H

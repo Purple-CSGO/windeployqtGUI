@@ -29,3 +29,15 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
+
+RESOURCES +=
+
+VERSION = 1.0
+
+DEFINES += APP_VERSION=\\\"$$VERSION\\\"
+
+QMAKE_TARGET_PRODUCT = windeployqtGUI
+
+RC_ICONS = app.ico

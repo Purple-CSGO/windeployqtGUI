@@ -25,6 +25,9 @@
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="toolPathSelect">
     <property name="geometry">
@@ -64,6 +67,9 @@
       <family>Sarasa Gothic SC</family>
       <pointsize>12</pointsize>
      </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
     </property>
     <property name="text">
      <string>选择路径</string>
@@ -241,13 +247,13 @@
      <bool>false</bool>
     </property>
     <property name="styleSheet">
-     <string notr="true">QTextEdit{ text-align: center;}</string>
+     <string notr="true"/>
     </property>
     <property name="inputMethodHints">
      <set>Qt::ImhNone</set>
     </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
     </property>
     <property name="verticalScrollBarPolicy">
      <enum>Qt::ScrollBarAsNeeded</enum>
