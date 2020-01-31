@@ -38,6 +38,7 @@ VERSION = 1.0
 
 DEFINES += APP_VERSION=\\\"$$VERSION\\\"
 
+QMAKE_CXXFLAGS+=/execution-charset:utf-8
 QMAKE_TARGET_PRODUCT = windeployqtGUI
 
 RC_ICONS = app.ico

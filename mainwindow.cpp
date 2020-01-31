@@ -10,6 +10,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->labelDragArea->setAttribute(Qt::WA_TransparentForMouseEvents,true);
     readSetting();
 }
 
@@ -62,7 +63,7 @@ void MainWindow::on_Start_clicked()
         return;
 
     QProcess p;
-    QString command = toolPath + " " + deployPath + " " + "-no-angle -no-opengl-sw";
+    QString command = toolPath + " \"" + deployPath + "\" --no-translations  --no-angle --no-opengl-sw --no-compiler-runtime";
     p.start(command);
     p.waitForStarted();
     p.closeWriteChannel();  //关闭写通道 ，解决未响应问题
